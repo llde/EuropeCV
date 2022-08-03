@@ -7,7 +7,7 @@
 % See  https://ctan.mirror.garr.it/mirrors/CTAN/help/Catalogue/licenses.lppl.html
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europecv}[08/03/2022 (Unicode TeX detection) European curriculum vitae class]
+\ProvidesClass{europecv}[17/06/2022 (Unicode TeX detection) European curriculum vitae class]
 
 % CV models and instructions:
 %   http://europass.cedefop.eu.int/htm/index.htm
@@ -261,7 +261,7 @@
 % Europass logo
 \DeclareOption{logo}{%
 \providecommand*\draweuropasslogo{%
-   \includegraphics[width=\ecv@logowidth]{europasslogo}}
+   \includegraphics[width=\ecv@logowidth]{europass2}}
 }
 \DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
 
@@ -529,6 +529,7 @@
 \newcommand*{\ecvmatrixriot}[1]{\def\ecv@matrixriot{#1}}
 \newcommand*{\ecvyoutube}[1]{\def\ecv@youtube{#1}}
 \newcommand*{\ecvpec}[1]{\def\ecv@pec{#1}}
+\newcommand*{\ecvgithub}[1]{\def\ecv@github{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
 \newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}}
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}}
@@ -562,6 +563,7 @@
 \ecvtelephone{}
 \ecvfax{}
 \ecvemail{}
+\ecvgithub{}
 \ecvpec{}
 \ecvnationality{}
 \ecvdateofbirth{}
@@ -608,6 +610,9 @@
 \fi
 \ifx\@empty\ecv@email\else
 \ecv@emailkey       &\ecv@email \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@github\else
+\ecv@githubkey      &\ecv@github \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@professional\else
 \ecv@professionalkey       &\ecv@professional \tabularnewline[5pt]

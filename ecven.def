@@ -12,6 +12,7 @@
 \def\ecv@faxkey{\ecv@utf{Fax}}
 \def\ecv@officekey{\ecv@utf{Office}}
 \def\ecv@emailkey{\ecv@utf{Personal Email}}
+\def\ecv@githubkey{\ecv@utf{Github}}
 \def\ecv@professionalkey{\ecv@utf{Professional Email}}
 \def\ecv@skypekey{\ecv@utf{Skype}}
 \def\ecv@matrixriotkey{\ecv@utf{Matrix/Riot}}
