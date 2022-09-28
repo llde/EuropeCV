@@ -7,7 +7,7 @@
 % See  https://ctan.mirror.garr.it/mirrors/CTAN/help/Catalogue/licenses.lppl.html
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europecv}[17/06/2022 (Unicode TeX detection) European curriculum vitae class]
+\ProvidesClass{europecv2}[17/06/2022 (Unicode TeX detection) European curriculum vitae class]
 
 % CV models and instructions:
 %   http://europass.cedefop.eu.int/htm/index.htm
@@ -20,7 +20,7 @@
 
 \newcommand\ecv@utf[1]{{\inputencoding{utf8x}#1}}
 \newcommand{\ecv@upshape}[1]{\upshape{#1}}
-
+\def\ecv@linkedinkey{\ecv@utf{Linkedin}}
 % Set language
 \DeclareOption{english}{%
   \AtEndOfPackage{%
@@ -534,6 +534,7 @@
 \newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}}
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}}
 \newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}}
+\newcommand*{\ecvlinkedin}[1]{\def\ecv@linkedin{#1}}
 % Personal picture
 \newcommand*{\ecvdrawpicture}{}
 \newcommand*{\ecvbeforepicture}[1]{\def\ecv@beforepic{#1}}
@@ -570,7 +571,7 @@
 \ecvgender{}
 \ecvhomepage{}
 \ecvpicture{}
-
+\ecvlinkedin{}
 
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
 {\ifx\@empty\ecv@date\else
@@ -622,6 +623,9 @@
 \fi
 \ifx\@empty\ecv@homepage\else
 \ecv@homepagekey       &\ecv@homepage \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@linkedin\else
+\ecv@linkedinkey       &\ecv@linkedin \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@skype\else
 \ecv@skypekey       &\ecv@skype \tabularnewline[5pt]
